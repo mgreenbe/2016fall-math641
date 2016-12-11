@@ -1,0 +1,425 @@
+\documentclass[10pt]{exam}
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+% \usepackage{url}
+% \usepackage{hyperref}
+
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{sublemma}[theorem]{Sublemma}
+% \newtheorem{question}[theorem]{Question}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{}
+\newtheorem{notation}[theorem]{Notation}
+
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\qand}{\quad\text{and}\quad}
+\newcommand{\qqand}{\qquad\text{and}\qquad}
+
+\newcommand{\lra}{\longrightarrow}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tip}{tip}
+\DeclareMathOperator{\tail}{tail}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\pr}{proj}
+
+
+\renewcommand{\phi}{\varphi}
+\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\Ab}{{}[A\mid b]}
+\newcommand{\Azero}{{}[A\mid 0]}
+
+\newcommand{\COS}[1]{\cos\big(2\pi k (t+#1)\big)}
+\newcommand{\SIN}[1]{\sin\big(2\pi k (t+#1)\big)}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+
+
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\bzero}{\mathbf{0}}
+
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\fa}{\mathfrak{a}}
+\newcommand{\fb}{\mathfrak{b}}
+\newcommand{\fp}{\mathfrak{p}}
+\newcommand{\fq}{\mathfrak{q}}
+
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Hom}{Hom}
+
+\renewcommand{\hat}{\widehat}
+
+\begin{document}
+
+\title{Math 311 -- Algebraic number theory -- Practice problemd}
+\author{Instructor: Matthew Greenberg}
+\maketitle
+
+\begin{questions}
+
+
+\question
+Let $A$ be an abelian group. Define the \emph{rank of $A$} to be 
+\[
+\sup\{|X| : \text{$X\subseteq A$ is $\ZZ$-linearly independent}\}.
+\]
+\begin{parts}
+\part
+Define what it means for an abelian group to be:
+\begin{itemize}
+\item free,
+\item finitely generated,
+\item torsion-free.
+\end{itemize}
+
+\part
+State the structure theorem for finitely-generated abelian groups. Use it to prove that an abelian group is free of rank $r<\infty$ if and only if $A\approx \ZZ^n$.
+
+\part
+State the \emph{elementary divisors theorem}.
+Use it to prove that if $A$ and $B$ are abelian groups such that if $B$ is free of rank $n<\infty$ and $A\subseteq B$, then $A$ is free of rank $m\leq n$ with equality if and only if $B/A$ is finite.
+Further, show that if $m=n$ then $[B:A]$ is the product of the elementary divisors of $A$ with respect to $B$.
+\end{parts}
+
+\question Let $K$ be a number field of degree $n$ with ring of integers $\cO_K$.
+
+\begin{parts}
+\part Prove that $\cO_K$ is a free abelian group of rank at most $n$.
+\[
+\rank \cO_K\leq \dim K.
+\]
+(Hint: Explain why (i) $\cO_K$ is torsion-free and (ii) a set of $>n$ elements of $K$ are $\ZZ$-linearly dependent.)
+
+\part Let $a\in K$. Prove that there is an integer $n>0$ such that $na\in \cO_K$. 
+
+\part Prove that $\cO_K$ contains a $\QQ$-basis of $K$.
+(Use the preceding exercise.) Deduce that
+\[
+\rank \cO_K\geq n.
+\]
+
+\end{parts}
+
+
+\question
+Let $V$ be an $n$-dimensional $\QQ$-vector space and let $L$ be an abelian subgroup of $V$.
+
+\begin{parts}
+\part
+Prove that if $L$ is free of rank $\leq n$ if and only if $L$ is finitely generated.
+(Use the structure theorem for finitely generated abelian groups.)
+
+\part Prove that a subset $X$ of $V$ is $\QQ$-linearly independent if and only if it is $\ZZ$-linearly independent.
+
+\part Prove that
+\[
+\sup\{|X| : \text{$X$ is a linearly independent subset of $L$}\}\leq n.
+\]
+(We are \emph{not} assuming $L$ is finitely generated.)
+
+\part Give an example of an abelian subgroup of $V$ that is not finitely generated.
+\end{parts}
+
+\question
+Let $V$ be an $F$-vector space and let
+\[
+B:V\times V\lra F
+\]
+be an $F$-bilinear form.
+\begin{parts}
+\part Prove that the following conditions are equivalent:
+\begin{enumerate}
+\item $B(x,V)=0$ if and only if $x=0$.
+\item The \emph{duality map}
+\[
+\delta:V\lra V^*:=\Hom_F(V,F)
+\]
+defined by
+\[
+\delta(x)(y)=B(x,y)
+\]
+is injective.
+\end{enumerate}
+If $B$ satisfies these conditions, it is called \emph{nondegenerate}.
+
+\part
+Suppose $B$ is nondegenerate and $V$ is finite-dimensional. Prove that $\delta$ is an isomorphism. (Hint: What is the dimension of $V^*$?)
+
+\part
+Suppose that $B$ is nondegenerate and $\bv=(v_1,\ldots,v_n)$ is an $F$-basis of $V$.
+Prove that there are is a unique \emph{$B$-dual basis} $\bv^B=(v_1^B,\ldots,v_n^B)$ of $V$ such that
+\[
+B(v_i,w_j)=\begin{cases}1&\text{if $i=j$,}\\0&\text{if $i\neq j$.}\end{cases}
+\]
+(Hint: Since $\bv$ is an $F$-basis of $V$, there are unique $F$-linear functionals
+\[
+\ell_j:V\lra F
+\]
+such that
+\[
+\ell_j(v_i) = \begin{cases}1&\text{if $i=j$},\\0&\text{if $i\neq j$.}\end{cases}
+\]
+Now use the injectivity of $\delta$.)
+
+
+\part
+Suppose that $\dim V=n$, that $B$ is nondegenerate and that $\bv$ is an $F$-basis of $V$.
+Let $[B]_\bv\in F^{n\times n}$ be the matrix whose $(i,j)$-component is $B(v_i,v_j)$.
+Show that
+\[
+B(x,y) = [x]_\bv^t[B]_\bv[y_\bv],
+\]
+where $[x]_\bv, [y]_\bv\in F^{n\times1}$ are the coordinate vectors of $x$ and $y$ with respect to $\bv$, respectively.
+
+\part Suppose that $\dim V=n$, that $B$ is nondegenerate, and that $\bv$ and $\bv'$ are $F$-bases of $V$. Let $A\in F^{n\times n}$ be the matrix mapping the $\bv$-coordinates of $x\in V$ to its $\bv'$ -coordinates:
+\[
+A[x]_\bv=[x]_\bv'.
+\]
+Prove that
+\[
+A^t[B]_{\bv'}A = [B]_\bv.
+\]
+
+\part
+Set
+\[
+\disc\bv=\det [B]_\bv,
+\]
+Prove that
+\[
+\disc\bv \equiv \disc \bv'\pmod{F^{\times 2}},
+\]
+where $\bv'$ is another $F$-basis of $V$ and $F^{\times2}=\{x^2 : x\in F^\times\}$. (Hint: Use the preceding exercise and properties of the determinant.)
+
+The \emph{discriminant of $B$}, denoted $\disc B$, is defined to be the image of $\disc \bv$ in $F^\times/F^{\times 2}$. By the above,
+\[
+\disc B\in F^\times/F^{\times2}
+\]
+does not depend on our choice of $\bv$.
+\end{parts}
+
+\question
+Suppose that $V$ is an $n$-dimensional $\QQ$-vector space equipped with a nondegenerate, symmetric, $\QQ$-bilinear form
+\[
+B:V\times V\lra \QQ
+\]
+Let $L$ be an abelian subgroup of $V$.
+
+\begin{parts}
+\part
+Suppose that $\bv=(v_1,\ldots,v_n)$ and $\bv'=(v_1',\ldots,v_n')$ are $\ZZ$-bases of $L$. Prove that
+\[
+\disc \bv = \disc \bv'.
+\]
+Define $\disc(L,B)$ to be this common value.
+
+\part Suppose that $M$ is an abelian subgroup of $V$ with $L\subseteq M$. Show that $M$ is $B$-integral and that
+\[
+\disc(M,B) = [L:M]^2\disc(L,B).
+\]
+(Hint: Use the elementary divisors theorem.)
+Conclude that if $\disc(L,B)$ is squarefree then $L$ is a maximal $B$-integral subgroup of $V$.
+
+\part 
+Define the \emph{$T$-dual subgroup}
+\[
+L^T = \{x\in V : T(x,L)\subseteq\ZZ\}.
+\]
+Prove that $L_1\subseteq L_2$ implies $L_2^T\subseteq L_1^T$.
+
+\part Suppose that $\bv=(v_1,\ldots,v_n)$ is a basis of $L$. Prove that $\bv^T=(v_1^T,\ldots,v_n^T)$ is a basis of $L^T$.
+
+\part
+Prove that
+\[
+|\disc(L, B)| = [L^T:L].
+\]
+\end{parts}
+
+\question
+\begin{parts}
+\part Define the \emph{trace map}
+\[
+t:K\lra \QQ.
+\]
+\part Prove that $t$ is $\QQ$-linear.
+
+\part
+Define the \emph{trace form}
+\[
+T:K\times K\lra \QQ.
+\]
+\part
+Prove that $T$ is $\QQ$-bilinear. (Use the fact that $t$ is $\QQ$-linear.)
+
+\part
+We proved in class that $T$ is nondegenerate. Remind yourself why this is.
+
+\part
+Prove that $\cO_K\subset\cO_K^T$, i.e., that
+\[
+T(\cO_K,\cO_K)\subseteq\ZZ.
+\]
+
+\part Let $L$ be a subgroup of $\cO_K$. Prove that $\cO_K^T\subseteq L^T\subset$.
+
+\part Let $\bv=(v_1,\ldots,v_n)$ be a basis of $K$ with $v_i\in \cO_K$ (such a basis exists by a previous exercise) and let
+\[
+L=\ZZ v_1+\cdots+\ZZ v_n.
+\]
+Then $L^T$ free abelian group of rank $n$ containing $\cO_K$. (Why?) Deduce that $\rank \cO_K\leq n$. Combine this with the result of a previous exercise to deduce that $\rank \cO_K=n$.
+
+\part
+Let $\fa$ be a nonzero ideal of $\cO_K$.
+Prove that $\fa$ contains a positive integer $n$.
+It follows that $n\cO_K\subseteq \fa$. Deduce that $\rank \fa=n$.
+
+\part Let $\bv=(v_1,\ldots,v_n)$ be an integral basis of $K$, i.e., $\ZZ$-basis of $\cO_K$. Define the \emph{discriminant $d_K$ of $K$} by
+\[
+d_K = \disc(\cO_K,T).
+\]
+Explain why $d_K$ is well-defined, i.e., is independent of our choice of basis.
+
+\part Let $\cO$ is a subring of $K\cap\bar{\ZZ}$ with $\rank\cO=n$. 
+Suppose that $\disc(\cO, T)$ is squarefree. Show that $\cO=\cO_K$ and that $d_K=\disc(\cO, T)$.
+
+\part Let $\cO$ be a subring of $K\cap \bar{\ZZ}$ with $\rank \cO=n$. Suppose that $\disc(\cO,T)=p^2$, where $p$ is a prime number. Show that $\cO=\cO_K$ and that $d_K=\disc(\cO, T)$.
+\end{parts}
+
+\question
+Let $a$ be a root of $f(x)$ and let $K=\QQ(a)$. Compute:
+\begin{itemize}
+\item $\disc(1,a,\ldots,a^{\deg f-1})$
+\item $r_1(K)$, $r_2(K)$, $\rank\cO_K^\times$
+\end{itemize}
+In the cases where $\rank\cO_K^\times\geq 1$, can you write down any units of infinite order? How about a linearly independent subset of $\cO_K^\times$ of maximal rank?)
+
+\medskip
+\begin{parts}
+\part
+$f(x)=x^2-m$
+
+\part
+$f(x) = x^2 -x + \dfrac{1-m}4$,\quad $m\in\ZZ$, $m\equiv 1\pmod 4$.
+
+\part
+$f(x) = x^3+x^2-1$
+
+\part
+$f(x)=x^3 + x^2 - 2x -  1$
+
+\part
+$f(x)=$ minimal polynomial of $\zeta_7+\zeta_7^{-1}$, where $\zeta_7=e^{2\pi i/7}$
+
+\part
+$f(x)=$ minimal polynomial of $\dfrac1{\sqrt2}(1+\sqrt{-1})$
+
+\part
+$f(x)=$ minimal polynomial of $\sqrt{5}+\sqrt{-1}$
+\end{parts}
+
+\question Let $K=\QQ(\sqrt{-5})$.
+
+\begin{parts}
+\part Prove that $2$ ramifies in $K$.
+
+\part Let $\fp_2$ be the unique (prime) ideal of $\cO_K$ such that $\fp^2=2\cO_K$. Prove that $\fp_2$ is not a principal ideal. Deduce that the class number of $K$ is at least $2$.
+\part By computing the Minkowski bound for $K$, show that $K$ has class number $2$.
+
+\part Prove that $\fp_2=(2,1+\sqrt{-5})$. (Hint: It suffices to show (why?) that $(2,1+\sqrt{-5})^2=2\cO_K$.)
+
+\part Prove that $3$ splits in $\cO_K$; write $3\cO_K=\fp_3\bar{\fp}_3$. Show that $\fp_3$ and $\bar{\fp}_3$ is not principal.
+
+\part Explain why $\fp_2\fp_3$ and $\fp_2\bar{\fp}_3$ are a principal ideals. Identify generators. (You don't need to a presentation of $\fp_3$ to do this.)
+\end{parts}
+
+
+\question
+Let $f(x) = x^3-ax^2-(a+3)x-1$.
+\begin{parts}
+\part Prove that $f(x)$ is irreducible.
+
+\part Let $\rho=\rho_1$ be a root of $f(x)$ and let $K=\QQ(\rho)$.
+Verify that
+\[
+\rho_2:= \frac{-1}{1+\rho_1}\quad\text{and}\quad
+\rho_3:= \frac{-1}{1+\rho_3}
+\]
+are the other roots of $f(x)$:
+\[
+f(x) = (x-\rho_1)(x-\rho_2)(x-\rho_2).
+\]
+Deduce that $K$ is totally real: $$r_1(K)=3.$$
+
+\part Show that the $\rho_j$ are units:
+\[
+\rho_j\in\cO_K^\times,\quad j=1,2,3.
+\]
+
+\part
+Prove that
+\[
+\disc(1,\rho,\rho^2)=(a^2+3a+9)^2.
+\]
+
+
+\part
+Suppose $$p:= a^2+3a+9$$ is prime.
+For example, $a=-1$, $1$, and $2$ give $p=7$, $13$, and $19$, respectively.
+Prove that $\cO_K=\ZZ[\rho]$.
+
+\part $(**)$
+Show that $p\equiv 1\pmod 3$, making $\frac{p-1}3$ an integer. Let $q\neq p$ be another prime. Prove that
+\[
+q^{\frac{p-1}3}\equiv\begin{cases}1&\text{if $q$ splits of $K$,}\\-1&\text{if $q$ is inert in $K$.}\end{cases}\pmod{p}.
+\]
+In other words, $q\neq p$ splits in $K$ if and only if $q$ is a cube modulo $p$.
+\end{parts}
+
+
+
+\end{questions}
+
+\end{document}
